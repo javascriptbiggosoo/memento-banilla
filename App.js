@@ -1,10 +1,15 @@
-import TodoList from "./components/TodoList/TodoList.js";
+import Footer from "./components/Footer/Footer.js";
+import Header from "./components/Header/Header.js";
+import Main from "./components/Main/Main.js";
 
 class App {
-  constructor($target) {
+  #state = [];
+  constructor({ $target }) {
     this.$target = $target;
 
-    this.todoList = new TodoList({});
+    this.header = new Header({ $target });
+    this.main = new Main({ $target });
+    this.footer = new Footer({ $target });
   }
   setState = () => {};
 }
