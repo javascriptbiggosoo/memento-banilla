@@ -1,4 +1,4 @@
-import SearchBar from "../SearchBar/SearchBar.js";
+import SearchBar from "../../SearchBar/SearchBar.js";
 
 class Header {
   constructor({ $target }) {
