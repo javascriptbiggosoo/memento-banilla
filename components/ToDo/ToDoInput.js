@@ -1,14 +1,13 @@
 class TodoInput {
-  constructor({ $target }) {
-    this.$form = document.createElement("form");
-    $target.append(this.$form);
+  $form = document.createElement("form");
+  $input = document.createElement("input");
 
-    this.$input = document.createElement("input");
-    this.$button = document.createElement("button");
+  constructor({ $target, onSubmit }) {
+    this.$form.addEventListener("submit", onSubmit);
     this.$input.placeholder = "새 할일";
-    this.$button.innerText = "새 할일";
+
     this.$form.append(this.$input);
-    this.$form.append(this.$button);
+    $target.append(this.$form);
   }
 }
 

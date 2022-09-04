@@ -3,31 +3,39 @@ import TodoList from "./ToDoList.js";
 import TodoCount from "./ToDoCounter.js";
 
 class Todo {
-  #toDos = [
-    {
-      할일: "",
-      완료여부: false,
-    },
-  ];
+  #toDos = [];
 
   constructor({ $target }) {
-    this.$todoInput = new TodoInput({
+    this.$toDoInput = new TodoInput({
       $target,
       onSubmit: this.handleSubmit,
     });
     this.$toDoList = new TodoList({
       $target,
-      toDos: this.#toDos,
+      initialToDos: this.#toDos,
     });
     this.$toDoCount = new TodoCount({
       $target,
     });
   }
 
-  handleSubmit = () => {};
+  handleSubmit = (ev) => {
+    ev.preventDefault();
+    const 할일 = ev.target.querySelector("input").value;
+    this.setToDos(할일);
+  };
 
   setToDos = (nextToDos) => {
-    this.#toDos = nextToDos;
+    this.#toDos = [
+      ...this.#toDos,
+      {
+        할일: nextToDos,
+        완료여부: false,
+      },
+    ];
+    console.log(this.#toDos);
+
+    this.$toDoList.setToDos(this.#toDos);
   };
 }
 
