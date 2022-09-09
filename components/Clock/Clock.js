@@ -4,7 +4,8 @@ class Clock {
     $target.append(this.$시계);
 
     setInterval(() => {
-      this.$시계.innerHTML = new Date();
+      const today = new Date();
+      this.$시계.innerHTML = `${today.getHours()}:${today.getMinutes()}`;
     }, 1000);
   }
 }

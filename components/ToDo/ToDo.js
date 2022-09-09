@@ -6,18 +6,27 @@ class Todo {
   #toDos = [];
 
   constructor({ $target }) {
+    const $toDoContainer = document.createElement("div");
+    $toDoContainer.classList.add("todo-container");
+    $target.append($toDoContainer);
+
+    this.$toDoList = new TodoList({
+      $target: $toDoContainer,
+      initialToDos: this.#toDos,
+      onToDoClick: this.handleToDoClick,
+    });
     this.$toDoInput = new TodoInput({
-      $target,
+      $target: $toDoContainer,
       onSubmit: this.handleSubmit,
     });
-    this.$toDoList = new TodoList({
-      $target,
-      initialToDos: this.#toDos,
-    });
     this.$toDoCount = new TodoCount({
-      $target,
+      $target: $toDoContainer,
     });
   }
+
+  handleToDoClick = () => {
+    this.setToDos();
+  };
 
   handleSubmit = (ev) => {
     ev.preventDefault();
@@ -33,7 +42,7 @@ class Todo {
         완료여부: false,
       },
     ];
-    console.log(this.#toDos);
+    // console.log(this.#toDos);
 
     this.$toDoList.setToDos(this.#toDos);
   };

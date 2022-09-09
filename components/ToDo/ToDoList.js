@@ -1,28 +1,32 @@
 class TodoList {
-  $todoList = document.createElement("div");
+  $toDoList = document.createElement("div");
+  #toDos;
 
+  // TODO: event delegation으로 to do 완료하기
   constructor({ $target, initialToDos }) {
-    this.toDos = initialToDos;
-    $target.append(this.$todoList);
-    if (!Array.isArray(initialToDos)) {
-      throw new Error();
-    }
-    if (initialToDos.length === 0) {
-      return;
-    }
+    $target.append(this.$toDoList);
+    this.#toDos = initialToDos;
 
     this.render();
+    this.$toDoList.addEventListener(
+      "click",
+      this.handleToDoListClick.bind(this)
+    );
   }
-
+  handleToDoListClick = (ev) => {
+    const $li = ev.target.closest("li");
+    console.log($li);
+  };
   render = () => {
-    this.$todoList.innerHTML = `<ul>${this.toDos
-      .map(({ 할일, 완료여부 }) => {
-        return `<li>${할일}</li>`;
+    this.$toDoList.innerHTML = `<ul>${this.#toDos
+      .map(({ 할일 }, idx) => {
+        return `<li data-id="${idx}">${할일}</li>`;
       })
       .join("")}</ul>`;
   };
   setToDos = (nextToDos) => {
-    this.toDos = nextToDos;
+    this.#toDos = nextToDos;
+
     this.render();
   };
 }
