@@ -24,24 +24,20 @@ class Todo {
     });
   }
 
-  handleToDoClick = () => {
-    this.setToDos();
+  handleToDoClick = (toDoIdx) => {
+    this.#toDos[toDoIdx].완료여부 = true;
+    this.setToDos(this.#toDos);
   };
 
   handleSubmit = (ev) => {
     ev.preventDefault();
     const 할일 = ev.target.querySelector("input").value;
-    this.setToDos(할일);
+    const nextToDos = [...this.#toDos, { 할일, 완료여부: false }];
+    this.setToDos(nextToDos);
   };
 
   setToDos = (nextToDos) => {
-    this.#toDos = [
-      ...this.#toDos,
-      {
-        할일: nextToDos,
-        완료여부: false,
-      },
-    ];
+    this.#toDos = nextToDos;
     // console.log(this.#toDos);
 
     this.$toDoList.setToDos(this.#toDos);
