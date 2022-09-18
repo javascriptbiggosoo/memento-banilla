@@ -1,6 +1,7 @@
 class Clock {
   constructor({ $target }) {
     this.$시계 = document.createElement("div");
+    this.$시계.classList.add("현재시간");
     $target.append(this.$시계);
 
     setInterval(() => {

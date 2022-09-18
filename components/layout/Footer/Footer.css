@@ -1,0 +1,8 @@
+@import url("../../ToDo/ToDo.css");
+
+footer {
+  display: flex;
+
+  justify-content: space-between;
+  width: 100%;
+}

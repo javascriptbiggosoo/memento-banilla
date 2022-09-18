@@ -1,9 +1,8 @@
 class Weather {
   constructor({ $target }) {
-    this.$target = $target;
+    this.$weather = document.createElement("div");
+    $target.append(this.$weather);
   }
-
-  render = () => {};
 }
 
 export default Weather;

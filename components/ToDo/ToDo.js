@@ -1,6 +1,5 @@
 import TodoInput from "./ToDoInput.js";
 import TodoList from "./ToDoList.js";
-import TodoCount from "./ToDoCounter.js";
 
 class Todo {
   #toDos = [];
@@ -19,13 +18,11 @@ class Todo {
       $target: $toDoContainer,
       onSubmit: this.handleSubmit,
     });
-    this.$toDoCount = new TodoCount({
-      $target: $toDoContainer,
-    });
   }
 
   handleToDoClick = (toDoIdx) => {
-    this.#toDos[toDoIdx].완료여부 = true;
+    const nextState = this.#toDos;
+    nextState[toDoIdx].완료여부 = true;
     this.setToDos(this.#toDos);
   };
 

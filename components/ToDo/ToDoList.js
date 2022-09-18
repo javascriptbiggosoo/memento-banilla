@@ -15,9 +15,7 @@ class TodoList {
   }
 
   // TODO: event delegation으로 to do 완료하기
-  // TODO: 완료여부 state 변경(상위에서)
-  // TODO: 완료 클래스 추가
-  // TODO: 리렌더
+
   handleToDoListClick = (ev) => {
     const $li = ev.target.closest("li");
     console.log($li);
