@@ -21,7 +21,16 @@ input,
 input:focus {
   outline: none;
   border: none;
-  border-bottom: greenyellow 2px solid;
+  opacity: 0.8;
+}
+
+input {
+  border-bottom: grey 1.3px solid;
+  transition: 0.5s;
+}
+
+input:focus {
+  border-bottom: greenyellow 1.3px solid;
 }
 
 #app {

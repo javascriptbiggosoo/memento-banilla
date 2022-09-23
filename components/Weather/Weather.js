@@ -1,6 +1,6 @@
 class Weather {
   constructor({ $target }) {
-    this.$weather = document.createElement("div");
+    this.$weather = document.createElement("section");
     $target.append(this.$weather);
   }
 }

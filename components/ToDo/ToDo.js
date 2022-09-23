@@ -5,7 +5,7 @@ class Todo {
   #toDos = [];
 
   constructor({ $target }) {
-    const $toDoContainer = document.createElement("div");
+    const $toDoContainer = document.createElement("section");
     $toDoContainer.classList.add("todo-container");
     $target.append($toDoContainer);
 
@@ -16,7 +16,7 @@ class Todo {
     });
     this.$toDoInput = new TodoInput({
       $target: $toDoContainer,
-      onSubmit: this.handleSubmit,
+      onSubmit: this.handleToDoSubmit,
     });
   }
 
@@ -26,16 +26,18 @@ class Todo {
     this.setToDos(this.#toDos);
   };
 
-  handleSubmit = (ev) => {
+  handleToDoSubmit = (ev) => {
     ev.preventDefault();
-    const 할일 = ev.target.querySelector("input").value;
+    const $input = ev.target.querySelector("input");
+    const 할일 = $input.value;
     const nextToDos = [...this.#toDos, { 할일, 완료여부: false }];
     this.setToDos(nextToDos);
+
+    $input.value = "";
   };
 
   setToDos = (nextToDos) => {
     this.#toDos = nextToDos;
-    // console.log(this.#toDos);
 
     this.$toDoList.setToDos(this.#toDos);
   };
