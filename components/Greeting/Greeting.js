@@ -3,13 +3,8 @@ import GreetingMessage from "./GreetingMessage.js";
 
 class Greeting {
   #userName = "";
+  $greeting = document.createElement("section");
   constructor({ $target }) {
-    this.$greeting = document.createElement("section");
-
-    this.$greeting.innerText = `안녕하세요${
-      this.#userName && this.#userName + ` 님`
-    }!`;
-
     this.$greetingMessage = new GreetingMessage({
       $target,
       userName: this.#userName,
@@ -21,13 +16,13 @@ class Greeting {
 
     $target.append(this.$greeting);
   }
-  handleSubmit = (ev) => {
-    ev.preventDefault();
-    const $input = ev.target;
-    this.#userName = $input.value;
+  handleSubmit = (submittedName) => {
+    this.setUserName(submittedName);
   };
   setUserName = (submittedName) => {
     this.#userName = submittedName;
+
+    this.$greetingMessage.setUserName(this.#userName);
   };
 }
 

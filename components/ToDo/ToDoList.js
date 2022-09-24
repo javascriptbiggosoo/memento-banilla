@@ -3,6 +3,7 @@ class TodoList {
   #toDos;
 
   constructor({ $target, initialToDos, onToDoClick }) {
+    // TODO: validation check
     $target.append(this.$toDoList);
     this.#toDos = initialToDos;
     this.onToDoClick = onToDoClick;
