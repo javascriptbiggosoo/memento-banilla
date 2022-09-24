@@ -14,8 +14,6 @@ class TodoList {
     this.render();
   }
 
-  // TODO: event delegation으로 to do 완료하기
-
   handleToDoListClick = (ev) => {
     const $li = ev.target.closest("li");
     console.log($li);

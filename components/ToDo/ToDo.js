@@ -26,14 +26,15 @@ class Todo {
     this.setToDos(this.#toDos);
   };
 
-  handleToDoSubmit = (ev) => {
-    ev.preventDefault();
-    const $input = ev.target.querySelector("input");
-    const 할일 = $input.value;
-    const nextToDos = [...this.#toDos, { 할일, 완료여부: false }];
+  handleToDoSubmit = (할일) => {
+    const nextToDos = [
+      ...this.#toDos,
+      {
+        할일,
+        완료여부: false,
+      },
+    ];
     this.setToDos(nextToDos);
-
-    $input.value = "";
   };
 
   setToDos = (nextToDos) => {
