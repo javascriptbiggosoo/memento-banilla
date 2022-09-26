@@ -4,6 +4,7 @@ class GreetingMessage {
   constructor({ $target, userName }) {
     this.#userName = userName;
 
+    this.$greetingMessage.classList.add("greeting-message");
     $target.append(this.$greetingMessage);
     this.render();
   }
