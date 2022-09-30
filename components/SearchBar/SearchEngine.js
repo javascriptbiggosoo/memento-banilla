@@ -1,3 +1,5 @@
 class SearchEngine {
-  constructor() {}
+  constructor({ $target }) {}
 }
+
+export default SearchEngine;

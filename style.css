@@ -21,7 +21,7 @@ input,
 input:focus {
   outline: none;
   border: none;
-  opacity: 0.8;
+  background-color: inherit;
 }
 
 input {

@@ -22,7 +22,7 @@ class Todo {
 
   handleToDoClick = (toDoIdx) => {
     const nextState = this.#toDos;
-    nextState[toDoIdx].완료여부 = true;
+    nextState[toDoIdx].완료여부 = !nextState[toDoIdx].완료여부;
     this.setToDos(this.#toDos);
   };
 

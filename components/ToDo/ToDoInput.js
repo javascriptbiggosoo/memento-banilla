@@ -5,12 +5,13 @@ class TodoInput {
   constructor({ $target, onSubmit }) {
     this.onSubmit = onSubmit;
 
+    this.$input.classList.add("to-do-input");
     this.$input.placeholder = "새 할일";
 
     this.$form.addEventListener("submit", this.handleSubmit.bind(this));
 
     this.$form.append(this.$input);
-    $target.append(this.$form);
+    $target.insertAdjacentElement("afterbegin", this.$form);
   }
   handleSubmit = (ev) => {
     ev.preventDefault();

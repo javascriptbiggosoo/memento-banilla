@@ -4,7 +4,7 @@ class TodoList {
 
   constructor({ $target, initialToDos, onToDoClick }) {
     // TODO: validation check
-    $target.append(this.$toDoList);
+    $target.insertAdjacentElement("beforeend", this.$toDoList);
     this.#toDos = initialToDos;
     this.onToDoClick = onToDoClick;
 
@@ -17,8 +17,7 @@ class TodoList {
 
   handleToDoListClick = (ev) => {
     const $li = ev.target.closest("li");
-    console.log($li);
-    console.log($li.dataset.id);
+
     this.onToDoClick($li.dataset.id);
   };
 
@@ -26,8 +25,8 @@ class TodoList {
     this.$toDoList.innerHTML = `<ul>${this.#toDos
       .map(({ 할일, 완료여부 }, idx) => {
         return `<li data-id="${idx}" class="할일 ${
-          완료여부 ? "할일완료" : ""
-        }">${할일}</li>`;
+          완료여부 && "할일완료"
+        }"><input type="checkbox" ${완료여부 && `checked`}> ${할일}</li>`;
       })
       .join("")}</ul>`;
   };
