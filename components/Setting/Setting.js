@@ -1,6 +1,8 @@
 class Setting {
+  $setting = document.createElement("i");
   constructor({ $target }) {
-    this.$setting = document.createElement("i");
+    this.$setting.classList.add("fa-solid", "fa-gear");
+
     $target.append(this.$setting);
   }
 }
