@@ -6,6 +6,7 @@ class Weather {
 
   $weather = document.createElement("section");
   constructor({ $target }) {
+    this.$weather.classList.add("weather");
     $target.append(this.$weather);
 
     this.render();
@@ -22,12 +23,21 @@ class Weather {
           const { latitude: lat, longitude: lon } = pos.coords;
 
           const weatherData = await getWeatherData([lat, lon]);
-          this.isLoading = false;
           console.log(weatherData);
+          this.isLoading = false;
+
+          const 날씨상황 = weatherData.weather[0].main;
+          const 기온 = weatherData.main.temp - 273.15;
+          this.$weather.innerHTML = `
+          <div>
+          <div>${날씨상황}</div>
+          <div>${Math.round(기온)}°C</div>
+          </div>
+          `;
 
           const img = document.createElement("img");
+          img.classList.add("날씨그림");
           img.src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
-          this.$weather.innerHTML = "";
           this.$weather.append(img);
         },
         (err) => {

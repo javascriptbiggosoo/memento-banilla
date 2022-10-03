@@ -1,7 +1,7 @@
 .할일완료 {
-  opacity: 0.5;
+  opacity: 0.375;
 }
 
 .할일 {
-  color: wheat;
+  margin: 2px 0 2px 0;
 }
