@@ -2,7 +2,7 @@ class SearchBar {
   $searchForm = document.createElement("form");
   $searchInput = document.createElement("input");
   constructor({ $target }) {
-    this.$searchInput.placeholder = "검색 엔진";
+    this.$searchInput.placeholder = "Google";
 
     this.$searchForm.append(this.$searchInput);
     $target.append(this.$searchForm);
