@@ -5,12 +5,18 @@ class Weather {
   isLoading = true;
 
   $weather = document.createElement("section");
+
   constructor({ $target }) {
     this.$weather.classList.add("weather");
     $target.append(this.$weather);
 
     this.render();
   }
+
+  toggleIsLoading = () => {
+    this.isLoading = !this.isLoading;
+  };
+
   render = () => {
     if (this.isLoading) {
       this.$weather.innerHTML = "로딩중이라능~~";
@@ -23,8 +29,8 @@ class Weather {
           const { latitude: lat, longitude: lon } = pos.coords;
 
           const weatherData = await getWeatherData([lat, lon]);
-          console.log(weatherData);
-          this.isLoading = false;
+          // console.log(weatherData);
+          this.toggleIsLoading();
 
           const 날씨상황 = weatherData.weather[0].main;
           const 기온 = weatherData.main.temp - 273.15;

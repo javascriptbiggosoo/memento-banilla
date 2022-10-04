@@ -1,2 +1,7 @@
 @import url("../../Clock/Clock.css");
 @import url("../../Greeting/Greeting.css");
+
+main {
+  width: 100%;
+  text-align: center;
+}

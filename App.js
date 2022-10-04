@@ -7,6 +7,9 @@ class App {
     this.$header = new Header({ $target });
     this.$main = new Main({ $target });
     this.$footer = new Footer({ $target });
+
+    // TODO: 배경사진 랜덤
+    // TODO: 4k / FHD 배경사진
   }
 }
 

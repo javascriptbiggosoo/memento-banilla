@@ -8,8 +8,9 @@
   align-items: center;
   justify-content: space-between;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("./assets/background-img/fhd/le-sserafim-members-hd-wallpaper-uhdpaper.com-449@1@g.jpg");
+  /* TODO: 배경 이미지 랜덤화(현재 더미) */
+  background: linear-gradient(rgba(0, 0, 0, 0.125), rgba(0, 0, 0, 0.125)),
+    url("./assets/background-img/fhd/2.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;

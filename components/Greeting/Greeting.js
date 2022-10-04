@@ -16,9 +16,11 @@ class Greeting {
 
     $target.append(this.$greeting);
   }
+
   handleSubmit = (submittedName) => {
     this.setUserName(submittedName);
   };
+
   setUserName = (submittedName) => {
     this.#userName = submittedName;
 
