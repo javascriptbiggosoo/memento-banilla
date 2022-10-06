@@ -3,7 +3,6 @@ class UserNameInput {
   constructor({ $target, onSubmit }) {
     this.$userNameInput.placeholder = "이름을 알려주세요.";
     this.$userNameInput.classList.add("user-name-input");
-    // TODO: validation check
     this.$userNameInput.addEventListener("keydown", (ev) => {
       if (ev.key === "Enter") {
         const submittedName = ev.target.value;

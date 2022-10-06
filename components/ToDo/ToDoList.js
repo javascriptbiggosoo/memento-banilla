@@ -3,7 +3,6 @@ class TodoList {
   #toDos;
 
   constructor({ $target, initialToDos, onToDoClick }) {
-    // TODO: validation check
     $target.insertAdjacentElement("beforeend", this.$toDoList);
     this.#toDos = initialToDos;
     this.onToDoClick = onToDoClick;

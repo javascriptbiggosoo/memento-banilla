@@ -16,7 +16,7 @@ class GreetingMessage {
     this.$greetingMessage.innerText = `안녕하세요${
       this.#userName && ` ${this.#userName}님`
     }!`;
-    // TODO: 이름 수정 기능 추가
+    // TODO: 이름 수정 기능
   };
 }
 

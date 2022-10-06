@@ -1,6 +1,8 @@
 import TodoInput from "./ToDoInput.js";
 import TodoList from "./ToDoList.js";
 
+// TODO: toDoInput에서 setItem
+// TODO: toDoList에서 getItem, validation
 class Todo {
   #toDos = [];
 
