@@ -19,7 +19,7 @@ class Weather {
 
   render = () => {
     if (this.isLoading) {
-      this.$weather.innerHTML = "로딩중이라능~~";
+      this.$weather.innerHTML = "~ Loading ~";
     }
 
     // TODO: 이거 좀 함수로 분리해야 할 것 같은데
@@ -48,7 +48,9 @@ class Weather {
           this.$weather.append(img);
         },
         (err) => {
-          alert("님 브라우저 완전 구림. 크롬 쓰라는;");
+          alert(
+            "크롬 브라우저가 아닌 경우 일부 기능이 작동하지 않을 수 있습니다."
+          );
           console.error(err);
         }
       );
