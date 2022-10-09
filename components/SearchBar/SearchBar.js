@@ -1,20 +1,16 @@
+import SearchInput from "./SearchInput.js";
+import ChooseSearchEngine from "./ChooseSearchEngine.js";
+
 class SearchBar {
   $searchForm = document.createElement("form");
-  $searchInput = document.createElement("input");
+
   constructor({ $target }) {
-    this.$searchInput.placeholder = "Google";
-
-    this.$searchForm.append(this.$searchInput);
-    $target.append(this.$searchForm);
-
-    // TODO: 검색 후 입력 창이 왜 안비워지지?
-    this.$searchInput.addEventListener("keydown", (ev) => {
-      if (ev.key === "Enter") {
-        let searchValue = ev.target.value;
-        window.open(`https://google.com/search?q=${searchValue}`);
-        searchValue = "";
-      }
+    this.$searchInput = new SearchInput({ $target: this.$searchForm });
+    this.$chooseSearchEngein = new ChooseSearchEngine({
+      $target: this.$searchForm,
     });
+
+    $target.append(this.$searchForm);
   }
 }
 

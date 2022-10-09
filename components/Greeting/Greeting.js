@@ -4,6 +4,7 @@ import GreetingMessage from "./GreetingMessage.js";
 class Greeting {
   #userName = "";
   $greeting = document.createElement("section");
+
   constructor({ $target }) {
     this.$greetingMessage = new GreetingMessage({
       $target,
@@ -11,13 +12,13 @@ class Greeting {
     });
     this.$userNameInput = new UserNameInput({
       $target: this.$greeting,
-      onSubmit: this.handleSubmit,
+      onSubmit: this.handleNameChange,
     });
 
     $target.append(this.$greeting);
   }
 
-  handleSubmit = (submittedName) => {
+  handleNameChange = (submittedName) => {
     this.setUserName(submittedName);
   };
 
