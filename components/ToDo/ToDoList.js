@@ -22,10 +22,10 @@ class TodoList {
 
   render = () => {
     this.$toDoList.innerHTML = `<ul>${this.#toDos
-      .map(({ 할일, 완료여부 }, idx) => {
+      .map(({ toDo, isCompleted }, idx) => {
         return `<li data-id="${idx}" class="할일 ${
-          완료여부 && "할일완료"
-        }"><input type="checkbox" ${완료여부 && `checked`}> ${할일}</li>`;
+          isCompleted && "할일완료"
+        }"><input type="checkbox" ${isCompleted && `checked`}> ${toDo}</li>`;
       })
       .join("")}</ul>`;
   };

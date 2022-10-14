@@ -15,9 +15,9 @@ class TodoInput {
   }
   handleSubmit = (ev) => {
     ev.preventDefault();
-    const 할일 = this.$input.value;
-    if (할일) {
-      this.onSubmit(할일);
+    const toDo = this.$input.value;
+    if (toDo) {
+      this.onSubmit(toDo);
 
       this.$input.value = "";
     }
