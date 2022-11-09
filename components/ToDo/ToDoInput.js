@@ -3,6 +3,7 @@ class TodoInput {
   $input = document.createElement("input");
 
   constructor({ $target, onSubmit }) {
+    this.$target = $target;
     this.onSubmit = onSubmit;
 
     this.$input.classList.add("to-do-input");
@@ -11,8 +12,9 @@ class TodoInput {
     this.$form.addEventListener("submit", this.handleSubmit.bind(this));
 
     this.$form.append(this.$input);
-    $target.insertAdjacentElement("afterbegin", this.$form);
+    this.$target.insertAdjacentElement("afterbegin", this.$form);
   }
+
   handleSubmit = (ev) => {
     ev.preventDefault();
     const toDo = this.$input.value;

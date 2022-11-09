@@ -3,18 +3,18 @@ class TodoList {
   #toDos;
 
   constructor({ $target, initialToDos, onToDoClick }) {
-    $target.insertAdjacentElement("beforeend", this.$toDoList);
+    this.$target = $target;
     this.#toDos = initialToDos;
     this.onToDoClick = onToDoClick;
 
-    this.$toDoList.addEventListener(
-      "click",
-      this.handleToDoListClick.bind(this)
-    );
+    this.$toDoList.addEventListener("click", this.handleToDoClick.bind(this));
+
+    this.$target.insertAdjacentElement("beforeend", this.$toDoList);
+
     this.render();
   }
 
-  handleToDoListClick = (ev) => {
+  handleToDoClick = (ev) => {
     const $li = ev.target.closest("li");
 
     this.onToDoClick($li.dataset.id);

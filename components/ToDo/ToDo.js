@@ -2,8 +2,7 @@ import { getItem, setItem } from "../../localStorage.js";
 import TodoInput from "./ToDoInput.js";
 import TodoList from "./ToDoList.js";
 
-// TODO: toDoInput에서 setItem
-// TODO: toDoList에서 getItem, validation
+// TODO: getItem 할 때 validation
 class Todo {
   #toDos = getItem("toDo", []);
 

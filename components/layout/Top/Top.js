@@ -1,7 +1,7 @@
 import SearchBar from "../../SearchBar/SearchBar.js";
 import Weather from "../../Weather/Weather.js";
 
-class Header {
+class Top {
   constructor({ $target }) {
     this.$header = document.createElement("header");
     $target.append(this.$header);
@@ -11,4 +11,4 @@ class Header {
   }
 }
 
-export default Header;
+export default Top;
