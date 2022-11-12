@@ -1,10 +1,10 @@
-import Header from "./components/layout/Header/Header.js";
-import Main from "./components/layout/Main/Main.js";
-import Footer from "./components/layout/Footer/Footer.js";
+import Top from "./components/layout/Top/Top.js";
+import Main from "./components/layout/Center/Center.js";
+import Footer from "./components/layout/Bottom/Bottom.js";
 
 class App {
   constructor({ $target }) {
-    this.$header = new Header({ $target });
+    this.$header = new Top({ $target });
     this.$main = new Main({ $target });
     this.$footer = new Footer({ $target });
 

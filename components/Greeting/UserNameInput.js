@@ -1,5 +1,6 @@
 class UserNameInput {
   $userNameInput = document.createElement("input");
+
   constructor({ $target, onSubmit }) {
     this.$userNameInput.placeholder = "이름을 알려주세요.";
     this.$userNameInput.classList.add("user-name-input");
@@ -13,6 +14,7 @@ class UserNameInput {
         }
       }
     });
+
     $target.append(this.$userNameInput);
   }
 }

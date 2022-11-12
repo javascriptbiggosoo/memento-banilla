@@ -7,8 +7,10 @@ class Weather {
   $weather = document.createElement("section");
 
   constructor({ $target }) {
+    this.$target = $target;
     this.$weather.classList.add("weather");
-    $target.append(this.$weather);
+
+    this.$target.append(this.$weather);
 
     this.render();
   }
@@ -23,7 +25,7 @@ class Weather {
     }
 
     // TODO: 이거 좀 함수로 분리해야 할 것 같은데
-    // TODO: 5분마다 재호출
+    // TODO: 1분마다 재호출
     if (navigator?.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (pos) => {
@@ -37,8 +39,8 @@ class Weather {
           const 기온 = weatherData.main.temp - 273.15;
           this.$weather.innerHTML = `
           <div>
-          <div>${날씨상황}</div>
-          <div>${Math.round(기온)}°C</div>
+            <div>${날씨상황}</div>
+            <div>${Math.round(기온)}°C</div>
           </div>
           `;
 

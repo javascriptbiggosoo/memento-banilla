@@ -1,10 +1,10 @@
+import { getItem, setItem } from "../../localStorage.js";
 import TodoInput from "./ToDoInput.js";
 import TodoList from "./ToDoList.js";
 
-// TODO: toDoInput에서 setItem
-// TODO: toDoList에서 getItem, validation
+// TODO: getItem 할 때 validation
 class Todo {
-  #toDos = [];
+  #toDos = getItem("toDo", []);
 
   constructor({ $target }) {
     const $toDoContainer = document.createElement("section");
@@ -24,16 +24,16 @@ class Todo {
 
   handleToDoClick = (toDoIdx) => {
     const nextState = this.#toDos;
-    nextState[toDoIdx].완료여부 = !nextState[toDoIdx].완료여부;
+    nextState[toDoIdx].isCompleted = !nextState[toDoIdx].isCompleted;
     this.setToDos(this.#toDos);
   };
 
-  handleToDoSubmit = (할일) => {
+  handleToDoSubmit = (toDo) => {
     const nextToDos = [
       ...this.#toDos,
       {
-        할일,
-        완료여부: false,
+        toDo,
+        isCompleted: false,
       },
     ];
     this.setToDos(nextToDos);
@@ -41,6 +41,7 @@ class Todo {
 
   setToDos = (nextToDos) => {
     this.#toDos = nextToDos;
+    setItem("toDo", this.#toDos);
 
     this.$toDoList.setToDos(this.#toDos);
   };
