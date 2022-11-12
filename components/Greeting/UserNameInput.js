@@ -10,7 +10,8 @@ class UserNameInput {
         if (submittedName) {
           onSubmit(submittedName);
 
-          this.$userNameInput.remove();
+          this.$userNameInput.value = "";
+          this.$userNameInput.hidden = true;
         }
       }
     });
