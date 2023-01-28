@@ -18,3 +18,5 @@ https://tbs01215.github.io/memento-banilla/
 - 할 일을 입력받아 로컬스토리지에 저장합니다.
 클릭시 완료여부를 토글할 수 있습니다.
 
+
+<img src="https://user-images.githubusercontent.com/28939278/215250935-17c1774c-8d08-47e8-a586-7aaadacd57a3.gif">
