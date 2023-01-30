@@ -2,8 +2,8 @@
 
 https://tbs01215.github.io/memento-banilla/
 
-널리 쓰이는 웹앱인 momentum을 바닐라 자바스크립트만 이용해 클론코딩합니다.
-리액트에서 자동으로 처리해주는 요소들을 OOP로 일일이 구현합니다.
+브라우저 시작 페이지에서 다양한 기능을 사용할 수 있도록 해주는 [momentum](https://momentumdash.com/)을 바닐라 자바스크립트만 이용해 클론코딩합니다.
+리액트를 사용했다면 자동으로 처리되었을 요소들을 OOP로 일일이 구현합니다.
 ## 구현 
 ### 좌측 상단
 - 검색어 입력시 구글 포털 검색창을 보여줍니다.
@@ -18,3 +18,5 @@ https://tbs01215.github.io/memento-banilla/
 - 할 일을 입력받아 로컬스토리지에 저장합니다.
 클릭시 완료여부를 토글할 수 있습니다.
 
+
+<img src="https://user-images.githubusercontent.com/28939278/215250935-17c1774c-8d08-47e8-a586-7aaadacd57a3.gif">
