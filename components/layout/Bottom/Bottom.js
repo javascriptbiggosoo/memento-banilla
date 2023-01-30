@@ -1,14 +1,14 @@
 import Todo from "../../ToDo/ToDo.js";
 import Setting from "../../Setting/Setting.js";
 
-class Footer {
+class Bottom {
   constructor({ $target }) {
-    this.$footer = document.createElement("footer");
-    $target.append(this.$footer);
+    this.$bottom = document.createElement("footer");
+    $target.append(this.$bottom);
 
-    this.setting = new Setting({ $target: this.$footer });
-    this.todo = new Todo({ $target: this.$footer });
+    this.setting = new Setting({ $target: this.$bottom });
+    this.todo = new Todo({ $target: this.$bottom });
   }
 }
 
-export default Footer;
+export default Bottom;

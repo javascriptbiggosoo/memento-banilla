@@ -12,7 +12,7 @@ class Weather {
 
     this.$target.append(this.$weather);
 
-    this.render();
+    setInterval(this.render(), 1000 * 60 * 1);
   }
 
   toggleIsLoading = () => {
@@ -24,8 +24,6 @@ class Weather {
       this.$weather.innerHTML = "~ Loading ~";
     }
 
-    // TODO: 이거 좀 함수로 분리해야 할 것 같은데
-    // TODO: 1분마다 재호출
     if (navigator?.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (pos) => {

@@ -3,11 +3,11 @@ import Weather from "../../Weather/Weather.js";
 
 class Top {
   constructor({ $target }) {
-    this.$header = document.createElement("header");
-    $target.append(this.$header);
+    this.$top = document.createElement("header");
+    $target.append(this.$top);
 
-    this.$searchBar = new SearchBar({ $target: this.$header });
-    this.$weather = new Weather({ $target: this.$header });
+    this.$searchBar = new SearchBar({ $target: this.$top });
+    this.$weather = new Weather({ $target: this.$top });
   }
 }
 

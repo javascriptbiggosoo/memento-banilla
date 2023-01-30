@@ -1,17 +1,17 @@
 import Clock from "../../Clock/Clock.js";
 import Greeting from "../../Greeting/Greeting.js";
 
-class Main {
-  $main = document.createElement("main");
+class Center {
+  $center = document.createElement("main");
 
   constructor({ $target }) {
-    $target.append(this.$main);
+    $target.append(this.$center);
 
-    this.clock = new Clock({ $target: this.$main });
-    this.Greeting = new Greeting({ $target: this.$main });
+    this.clock = new Clock({ $target: this.$center });
+    this.Greeting = new Greeting({ $target: this.$center });
 
-    this.$main.addEventListener("hover", this.handleHover);
+    this.$center.addEventListener("hover", this.handleHover);
   }
 }
 
-export default Main;
+export default Center;
