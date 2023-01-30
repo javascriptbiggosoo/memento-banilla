@@ -3,7 +3,6 @@ class SearchInput {
   searchEngine = "Google";
 
   constructor({ $target }) {
-    // TODO: 검색 후 입력 창이 왜 안비워지지?
     this.$searchInput.placeholder = "Google";
 
     this.$searchInput.addEventListener("keydown", (ev) => {
