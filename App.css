@@ -8,9 +8,8 @@
   align-items: center;
   justify-content: space-between;
 
-  /* TODO: 배경 이미지 랜덤화(현재 더미) */
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("./assets/background-img/qhd/11.jpg");
+    url("./assets/background-img/qhd/tony-lee-i_XLLP08BOc-unsplash.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;

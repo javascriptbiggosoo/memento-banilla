@@ -28,6 +28,7 @@ class Weather {
 
     const 날씨상황 = weatherData.weather[0].main;
     const 기온 = weatherData.main.temp - 273.15;
+
     this.$weather.innerHTML = `
     <div>
       <div>${날씨상황}</div>
@@ -40,6 +41,7 @@ class Weather {
     img.src = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
     this.$weather.append(img);
   };
+
   render = () => {
     if (this.isLoading) this.$weather.innerHTML = "~ Loading ~";
 
