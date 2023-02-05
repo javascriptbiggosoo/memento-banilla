@@ -1,5 +1,3 @@
-// TODO: eng/kor
-// TODO: google/naver/duckduckgo
 class Setting {
   $setting = document.createElement("i");
 

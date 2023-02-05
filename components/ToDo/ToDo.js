@@ -4,7 +4,7 @@ import TodoList from "./ToDoList.js";
 
 // TODO: getItem 할 때 validation
 class Todo {
-  #toDos = getItem("toDo", []);
+  #toDos = getItem("toDo", []).filter((toDo) => toDo.isCompleted === false);
 
   constructor({ $target }) {
     const $toDoContainer = document.createElement("section");

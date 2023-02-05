@@ -5,15 +5,17 @@ class SearchInput {
   constructor({ $target }) {
     this.$searchInput.placeholder = "Google";
 
-    this.$searchInput.addEventListener("keydown", (ev) => {
-      if (ev.key === "Enter") {
-        let searchValue = ev.target.value;
-        window.open(`https://google.com/search?q=${searchValue}`);
-        searchValue = "";
-      }
-    });
+    this.$searchInput.addEventListener("keydown", this.handleEnter);
 
     $target.append(this.$searchInput);
+  }
+
+  handleEnter(ev) {
+    if (ev.key === "Enter") {
+      let searchValue = ev.target.value;
+      window.open(`https://google.com/search?q=${searchValue}`);
+      searchValue = "";
+    }
   }
 }
 

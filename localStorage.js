@@ -6,13 +6,12 @@ export const setItem = (key, data) => {
     localStorage.setItem(key, 저장할거);
   } catch (err) {
     alert(
-      `${key} 추가가 실패 했습니다. 총 데이터 용량이 5MB를 초과된 경우일 수 있습니다.`
+      `${key} 추가에 실패 했습니다. 총 데이터 용량이 5MB를 초과된 경우일 수 있습니다.`
     );
   }
 };
 
 export const getItem = (key, defaultValue) => {
-  // 없다면 디폴트값?
   const 가져올거 = localStorage.getItem(key);
   return JSON.parse(가져올거) || defaultValue;
 };
