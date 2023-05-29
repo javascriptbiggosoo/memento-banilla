@@ -1,7 +1,8 @@
 # Memento-with vanilla JavaScript
 
-[https://tbs01215.github.io/memento-banilla/
-](https://javascriptbiggosoo.github.io/memento-banilla/)
+https://javascriptbiggosoo.github.io/memento-banilla/
+
+
 브라우저 시작 페이지에서 다양한 기능을 사용할 수 있도록 해주는 [momentum](https://momentumdash.com/)을 바닐라 자바스크립트만 이용해 클론코딩합니다.
 리액트를 사용했다면 자동으로 처리되었을 요소들을 OOP로 일일이 구현합니다.
 ## 구현 
