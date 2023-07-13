@@ -9,6 +9,8 @@ https://javascriptbiggosoo.github.io/memento-vanilla/
 이 프로젝트의 목표는 React와 같은 라이브러리나 프레임워크에서 자동으로 처리되는 기능들을 객체지향 프로그래밍(OOP) 원칙을 사용하여 수동으로 구현하는 것입니다.
 이는 JavaScript의 능력에 대한 깊은 이해를 요구합니다.
 
+[memento-react](https://github.com/javascriptbiggosoo/memento-react) 에서 리액트 + TS로 개발한 프로젝트 또한 보실 수 있습니다.
+
 ## 주요 로직
 
 ### ES6 클래스를 이용한 컴포넌트 생성
