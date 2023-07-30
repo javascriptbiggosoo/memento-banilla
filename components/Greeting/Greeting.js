@@ -20,7 +20,7 @@ class Greeting {
       isNameChanging: this.isNameChanging,
     });
 
-    this.$userNameChangeButton.innerText = "";
+    this.$userNameChangeButton.innerText = "이름 변경";
     if (this.isNameChanging) {
       this.$userNameChangeButton.hidden = true;
     } else {
