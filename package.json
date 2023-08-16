@@ -4,7 +4,8 @@
   "description": "https://javascriptbiggosoo.github.io/memento-vanilla/",
   "main": "App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=none"
   },
   "author": "",
   "license": "ISC",
